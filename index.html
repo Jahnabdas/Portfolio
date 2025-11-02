@@ -1,36 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css program/style.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <form action="">
-        <h1>Login</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Username" required />
-          <i class="bx bx-user"></i>
+    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css program/style2.css">
+</head>
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <button class="nav-logo" onclick="scrollToTop()">Portfolio.</button>
+        <div class="nav-links">
+            <button class="nav-link" onclick="scrollToSection('about')">About</button>
+            <button class="nav-link" onclick="scrollToSection('projects')">Projects</button>
+            <button class="nav-link" onclick="scrollToSection('skills')">Skills</button>
+            <button class="nav-link" onclick="scrollToSection('contact')">Contact</button>
         </div>
-        <div class="input-box">
-          <input type="password" placeholder="Password" required />
-          <i class="bx bx-lock"></i>
-        </div>
-        <div class="remember-forget">
-          <label><input type="checkbox" />Remember me</label>
-          <a href="#">Forget password</a>
-        </div>
-        <button type="submit" class="btn">Login</button>
-        <div class="register-link">
-          <p>Don't have an account</p>
-        </div>
-      </form>
     </div>
-  </body>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="welcome-container">
+            <h1 id="welcome-text"></h1>
+        </div>
+        <h1 class="hero-title">Creative Developer</h1>
+        <p class="hero-subtitle">Building beautiful digital experiences with modern technologies</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="scrollToSection('projects')">View My Work</button>
+            <button class="btn btn-outline" onclick="scrollToSection('contact')">Get In Touch</button>
+        </div>
+
+    </div>
+    <button class="scroll-indicator" onclick="scrollToSection('about')" aria-label="Scroll to about section">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+    </button>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+            Passionate developer with a focus on creating exceptional digital experiences.
+            I combine technical expertise with creative design to build solutions that make a difference.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Clean Code</h3>
+                <p class="feature-description">Writing maintainable, scalable code following best practices</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Modern Design</h3>
+                <p class="feature-description">Creating beautiful, user-friendly interfaces that delight users</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Pixel Perfect</h3>
+                <p class="feature-description">Attention to detail in every aspect of development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+            A selection of my recent work showcasing various skills and technologies
+        </p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/file/67c9df6daa2103711bbf29f2_future-webdesign.jpg" alt="Modern Web App">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Web designs</h3>
+                        <a href="/file/Untitled.svg" target="_blank" rel="noopener noreferrer"
+                            aria-label="View Amazon Clown project">
+                            <svg class="project-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="project-description">Web interface design</p>
+                    <div class="project-tags">
+                        <span class="tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/file/download (1).jpg" alt="E-Commerce Platform">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <svg class="project-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </div>
+                    <p class="project-description">Complete e-commerce solution with payment integration and admin panel
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/file/download.jpg" alt="Analytics Dashboard">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <svg class="project-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </div>
+                    <p class="project-description">Data visualization dashboard with interactive charts and reports</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">
+            Technologies and tools I work with to bring ideas to life
+        </p>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 class="skill-category-title">Frontend</h3>
+                <div class="skills-list">
+                    <span class="skill-badge">React</span>
+                    <span class="skill-badge">TypeScript</span>
+                    <span class="skill-badge">Tailwind CSS</span>
+                    <span class="skill-badge">Next.js</span>
+                    <span class="skill-badge">Vue.js</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Backend</h3>
+                <div class="skills-list">
+                    <span class="skill-badge">Node.js</span>
+                    <span class="skill-badge">Express</span>
+                    <span class="skill-badge">PostgreSQL</span>
+                    <span class="skill-badge">MongoDB</span>
+                    <span class="skill-badge">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">Tools & Other</h3>
+                <div class="skills-list">
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">Docker</span>
+                    <span class="skill-badge">AWS</span>
+                    <span class="skill-badge">Figma</span>
+                    <span class="skill-badge">CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+            Have a project in mind? Let's work together to create something amazing
+        </p>
+
+        <div class="contact-container">
+            <div class="contact-card">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" class="form-textarea" placeholder="Your Message" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="https://github.com/Jahnabdas" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="jahnabdas" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/jahnabdas?igsh=Y2xoNTE0YmY5cjF5" class="social-link"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 1c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V6c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">© <span id="year"></span> Portfolio. Built with passion and modern technologies.</p>
+    </div>
+</footer>
+
+<script src="/js program/script2.js"></script>
+</body>
+
 </html>
